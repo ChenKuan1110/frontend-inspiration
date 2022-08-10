@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico">
+  <title>虚拟键盘效果 带按键效果</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+      <div class="key key1">
+        <input type="button" value="Q">
+        <input type="button" value="W">
+        <input type="button" value="E">
+        <input type="button" value="R">
+        <input type="button" value="T">
+        <input type="button" value="Y">
+        <input type="button" value="U">
+        <input type="button" value="I">
+        <input type="button" value="O">
+        <input type="button" value="P">
+      </div>
+      <div class="key key2">
+        <input type="button" value="A">
+        <input type="button" value="S">
+        <input type="button" value="D">
+        <input type="button" value="F">
+        <input type="button" value="G">
+        <input type="button" value="H">
+        <input type="button" value="J">
+        <input type="button" value="K">
+        <input type="button" value="L">
+      </div>
+      <div class="key key3">
+        <input type="button" value="Z">
+        <input type="button" value="X">
+        <input type="button" value="C">
+        <input type="button" value="V">
+        <input type="button" value="B">
+        <input type="button" value="N">
+        <input type="button" value="M">
+      </div>
+      <div class="key key4">
+        <input type="button" value="SPACE">
+      </div>
+  </div>
+</body>
+<script type="module">
+
+  let currentButton = null; // 按下的按钮
+
+  document.addEventListener('keydown', e=>{
+    // console.dir(e)
+    const {key} = e; // 获取按下键盘的内容
+    let button = null; // 按下的键
+
+    if(key === ' '){ // 处理空格
+      button = document.querySelector('input[type=button][value=SPACE]');
+      button.focus();
+    }else{
+      button = document.querySelector(`input[type=button][value=${key.toUpperCase()}]`);
+      button && button.focus(); // 避免界面上没有显示该按钮
+    }
+    currentButton = button;
+  });
+
+  // 键盘弹起， 按下的键失去焦点，从而改变样式
+  document.addEventListener('keyup', e => {
+    currentButton && currentButton.blur();
+  });
+</script>
+</html>
