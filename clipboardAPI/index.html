@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../favicon.ico">
+  <title>use ClipBoard API </title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- 剪切区域 -->
+  <section class="column types">
+    <div class="clip-item">
+      <h3 class="clip-item__title">文本类型</h3>
+      <textarea class="textarea"></textarea>
+      <button class="copy-btn copy-text-btn">复制文字</button>
+    </div>
+
+    <!-- html -->
+    <div class="clip-item">
+      <h3 class="clip-item__title">HTML</h3>
+      <p class="html-content">
+        道可道，非常道
+        <br>
+        名可名，非常名
+        <br>
+        无名天地之始，有名万物之母
+        <br>
+        故常无欲，以观其妙
+        <br>
+        常有欲，以观其徼
+        <br>
+        此两者同出而异名，同谓之玄
+        <br>
+        玄之又玄，众妙之门
+      </p>
+      <button class="copy-btn copy-html-btn">复制HTML</button>
+    </div>
+
+    <!-- 图片 : PNG -->
+    <div class="clip-item">
+      <h3 class="clip-item__title">PNG 图片</h3>
+      <img class="clip-item__img png-img" src="./assets/avatar.png" alt="">
+      <button class="copy-btn copy-png-btn">复制图片</button>
+    </div>
+
+    <!-- 图片 : JPG -->
+    <div class="clip-item">
+      <h3 class="clip-item__title">JPG 图片</h3>
+      <img class="clip-item__img jpg-img" src="./assets/forest.jpeg" alt="">
+      <button class="copy-btn copy-jpg-btn">复制图片</button>
+    </div>
+    
+  </section>
+
+  <!-- 读取内容区域 -->
+  <section class="column histories">
+  </section>
+</body>
+<template id="copy-history-item-template">
+  <div class="copy-item">
+    <h2 class="copy-item__title"></h2>
+    <div class="copy-item__content"></div>
+  </div>
+</template>
+<script src="./index.js"></script>
+
+</html>

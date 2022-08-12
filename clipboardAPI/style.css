@@ -1,0 +1,148 @@
+
+
+:root{
+  --primary-color: hsl(102, 71%, 29%);
+  --second-color: hsl(102,71%, 39%);
+  --focus-color: hsl(102,71%, 39%);
+  --textColor: #333;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  gap: 2rem;
+  align-items: stretch;
+  justify-content: space-around;
+  grid-template-columns: repeat(2, 1fr);
+  background: linear-gradient(45deg, rgb(243, 124, 124), rgb(217, 240, 41), #14942f);
+  overflow: hidden;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  overflow: auto;
+  scroll-behavior: smooth;
+  padding: 1rem .5rem;
+}
+/* 设置水平滚动条的高度，垂直滚动的宽度 */
+.column::-webkit-scrollbar{
+  width: .25rem;
+}
+
+/* 设置滚动条里面的滑块样式 */
+.column::-webkit-scrollbar-thumb{
+  background-color: var(--second-color);
+}
+
+/* 设置滚动条的轨道背景样式 */
+.column::-webkit-scrollbar-track{
+  background-color: #fff;
+}
+
+/* 左侧复制项目区域 */
+.types::before{
+  content: "剪切内容类型";
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.clip-item{
+  width: 90%;
+  margin: 0 auto;
+  padding: .5rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border-radius: .5rem;
+}
+.clip-item:last-of-type{
+  margin-bottom: 0;
+}
+
+.clip-item__title{
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.textarea{
+  width: 100%;
+  min-height: 200px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  padding: .5rem;
+  font-size: 1.2rem;
+  color: var(--textColor);
+}
+.textarea:focus{
+  border-color: transparent;
+  outline: .25rem solid var(--focus-color);
+}
+
+.clip-item__img{
+  width: 100%;
+}
+
+.copy-btn{
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin-top: .5rem;
+  outline: .25rem solid transparent;
+  border-radius: .25rem;
+}
+.copy-btn:hover,
+.copy-btn:active{
+  outline: .25rem solid var(--focus-color);
+}
+
+
+/* 右侧粘贴栏 */
+.histories::before{
+  content: '剪切板历史';
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.copy-item{
+  min-width: 80%;
+  margin: 0 auto 2rem;
+  background-color: #fff;
+  border-radius: .5rem;
+}
+
+.copy-item:last-of-type{
+  margin-bottom: 0;
+}
+
+
+
+.copy-item__title{
+  text-align: center;
+  color: var(--primary-color);
+  line-height: 1.5rem;
+  padding: 0.25rem;
+}
+
+.copy-item__content{
+  padding: .5rem;
+  display: block;
+  border-top: 2px dashed var(--second-color);
+}
+
+/* 屏幕宽度低于 500px 的设备,修改网格布局的列数为 1 */
+@media screen and (max-width: 500px){
+  body{
+    grid-template-columns: 1fr;
+  }
+}
