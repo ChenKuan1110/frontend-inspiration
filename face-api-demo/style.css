@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+video{
+  position: absolute;
+  top:40px;
+  left:40px;
+  /* border: 1px solid pink; */
+}
+canvas{
+  position: absolute;
+  top:40px;
+  left:40px;
+  z-index: 99;
+}
