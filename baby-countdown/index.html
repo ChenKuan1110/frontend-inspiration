@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <script src="https://kit.fontawesome.com/c45afaa7de.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>倒计时</title>
+</head>
+
+<body>
+  <div class="landing">
+    <div class="landing-inner">
+      <img src="./icon_baby.svg" alt="">
+      <h1>宝宝来啦！</h1>
+      <p>Happy Time Countdown</p>
+      <h2>距离宝宝诞生还有</h2>
+      <h1 class="countdown"></h1>
+    </div>
+  </div>
+  <div class="setting">
+    <div class="title"><i class="fas fa-regular fa-gear"></i></div>
+    <div class="setting-body">
+      <div>
+        <input type="number" id="year" max="9999" min="2023" step="1">
+        <label for="year">年</label>
+      </div>
+      <div>
+        <input type="number" id="month" max="12" min="1" step="1">
+        <label for="month">月</label>
+      </div>
+      <div>
+        <input type="number" id="day" step="1" max="31" min="1">
+        <label for="day">日</label>
+      </div>
+      <div>
+        <input type="number" id="hour" step="1" max="23" min="0">
+        <label for="hour">时</label>
+      </div>
+      <div>
+        <input type="number" id="minute" step="1" max="59" min="0">
+        <label for="minute">分</label>
+      </div>
+      <div>
+        <input type="number" id="second" step="1" max="59" min="0">
+        <label for="second">秒</label>
+      </div>
+      <div>
+        <input id="set-btn" type="submit" value="设置">
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./main.js"></script>
+</html>
