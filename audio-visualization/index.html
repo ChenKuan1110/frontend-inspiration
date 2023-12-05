@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音频文件可视化</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      display: flex;
+      flex-direction: column;  
+      align-items: center;
+      gap: 10px;
+    }
+    canvas{
+      width: 640px;
+      height: 480px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="640" height="480"></canvas>
+  <audio src="./summer vibe.mp3" controls></audio>
+</body>
+<script src="./main.js"></script>
+</html> 
